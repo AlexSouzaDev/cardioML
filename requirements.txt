@@ -1,0 +1,14 @@
+scikit-learn>=1.4
+xgboost>=2.0
+lightgbm>=4.0
+imbalanced-learn>=0.12
+optuna>=3.5
+shap>=0.45
+mlflow>=2.10
+ucimlrepo>=0.0.6
+pandas>=2.0
+numpy>=1.26
+matplotlib>=3.8
+seaborn>=0.13
+pyyaml>=6.0
+joblib>=1.3

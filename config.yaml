@@ -1,0 +1,42 @@
+paths:
+  raw_data: data/raw
+  processed_data: data/processed
+  experiments: experiments
+  reports_figures: reports/figures
+  reports_tables: reports/tables
+
+training:
+  seed: 42
+  n_splits: 5
+  test_size: 0.15
+  val_size: 0.15
+  n_trials: 50
+  primary_metric: roc_auc
+
+search_spaces:
+  xgb:
+    n_estimators: [50, 500]
+    max_depth: [3, 9]
+    learning_rate: [0.01, 0.3]
+    subsample: [0.6, 1.0]
+    colsample_bytree: [0.6, 1.0]
+
+  lgbm:
+    n_estimators: [50, 500]
+    max_depth: [3, 9]
+    learning_rate: [0.01, 0.3]
+    num_leaves: [15, 127]
+
+  rf:
+    n_estimators: [100, 500]
+    max_depth: [3, 20]
+    min_samples_split: [2, 10]
+
+  logreg:
+    C: [0.001, 100.0]
+    penalty: [l2]
+
+  mlp:
+    hidden_layer_sizes: [[32, 16], [64, 32], [128, 64, 32]]
+    alpha: [0.0001, 0.1]
+    learning_rate_init: [0.0001, 0.01]
